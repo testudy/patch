@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>客户端检测</title>
+</head>
+<body>
+	<div class="container">
+		<div class="hero-unit">
+			<h1>浏览器信息</h1>
+			<p id="output"></p>
+		</div>
+	</div>
+    <script src="../lib/jquery/2.0.0/jquery.js"></script>
+	<script src="../src/client.js"></script>
+	<script>
+		$('#output').html(client.toString());
+	</script>
+</body>
+</html>

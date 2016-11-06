@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	    <title>storage Test Suit</title>
+		<link rel="stylesheet" href="../lib/qunit/1.9.0/qunit.css" />
+	    <script src="../lib/qunit/1.9.0/qunit.js"></script>
+	    <script src="../src/storage.js"></script>
+	</head>
+	<body>
+	    <div id="qunit"></div>
+		<script>
+		test('Storage Test', function(){
+			localStorage.setItem('name1', 'value1');
+			equal(localStorage.getItem('name1'), 'value1');
+			equal(localStorage.key(0), 'name1');
+			equal(localStorage.length, 1);
+
+			localStorage.setItem('name2', 'value2');
+			equal(localStorage.getItem('name2'), 'value2');
+			equal(localStorage.key(1), 'name2');
+			equal(localStorage.length, 2);
+
+			localStorage.setItem('name1', 'newValue1');
+			equal(localStorage.getItem('name1'), 'newValue1');
+			equal(localStorage.key(0), 'name1');
+			equal(localStorage.length, 2);
+
+			localStorage.removeItem('name1');
+			equal(localStorage.getItem('name1'), null);
+			equal(localStorage.length, 1);
+
+			localStorage.clear();
+		});
+		</script>
+	</body>
+</html>

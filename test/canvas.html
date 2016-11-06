@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Canvas Demo</title>
+	<style>
+	canvas{
+		display: block;
+	}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>Canvas</h1>
+		<canvas id="polygon"></canvas>
+	</div>
+    <script src="../lib/jquery/2.0.0/jquery.js"></script>
+	<script src="../src/canvas.js"></script>
+	<script>
+		var canvas = $('#polygon');
+		canvas.attr('width', canvas.width());
+		canvas.attr('height', canvas.height());
+
+		var context = canvas[0].getContext('2d');
+		context.fillStyle = '#C00';
+		context.strokeStyle = '#0C0';
+		context.lineWidth = 5;
+
+		context.beginPath();
+
+		polygon(context, 3, 75, 75, 56);
+		polygon(context, 4, 225, 75, 56, Math.PI/4);
+		polygon(context, 5, 375, 75, 56);
+		polygon(context, 6, 525, 75, 56, Math.PI/6);
+		polygon(context, 4, 525, 75, 36, Math.PI/4, true);
+
+		context.stroke();
+		context.fill();
+	</script>
+</body>
+</html>
